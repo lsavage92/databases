@@ -1,3 +1,4 @@
+//Main file of server code
 var express = require('express');
 var db = require('./db');
 
