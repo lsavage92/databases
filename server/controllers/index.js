@@ -4,9 +4,11 @@ var bluebird = require('bluebird');
 module.exports = {
 // this is routed to 1337/classes/messages
   messages: {
-    get: function (req, res) {}, // a function which handles a get request for all messages
+    get: function (req, res) {
+      models.messages.get(res);
+    }, // a function which handles a get request for all messages
     post: function (req, res) {
-
+      models.messages.get(req, res);
     } // a function which handles posting a message to the database
   },
 // this is routed to 1337/classes/users
@@ -16,6 +18,7 @@ module.exports = {
       models.users.get(res);
     },
     post: function (req, res) {
+      models.users.post(req, res);
     }
 
     /*options: function(req, res){
